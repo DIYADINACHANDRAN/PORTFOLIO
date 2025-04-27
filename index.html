@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DIYA DINACHANDRAN | Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #fffafc;
+      --accent-color: #f2c9e0;
+      --text-color: #2d2d2d;
+      --light-color: #fafafa;
+    }
+
+    body.dark-mode {
+      --bg-color: #1e1e2f;
+      --accent-color: #9f7aea;
+      --text-color: #ffffff;
+      --light-color: #2d2d44;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    header {
+      background: var(--accent-color);
+      padding: 1.5rem 2rem;
+      position: relative;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      text-align: center;
+    }
+
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: var(--text-color);
+      margin: 5px 0;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    nav a {
+      margin: 0.5rem 1rem;
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #000;
+    }
+
+    .nav-active {
+      display: flex !important;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .dark-toggle {
+      position: absolute;
+      top: 1.5rem;
+      left: 2rem;
+      background: transparent;
+      border: 2px solid var(--text-color);
+      padding: 0.3rem 0.7rem;
+      border-radius: 10px;
+      color: var(--text-color);
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .dark-toggle:hover {
+      background-color: var(--text-color);
+      color: var(--bg-color);
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--accent-color);
+    }
+
+    #about .profile {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .profile img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--accent-color);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .skills, .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: var(--light-color);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #f8f8f8;
+      font-size: 0.9rem;
+    }
+
+    body.dark-mode footer {
+      background-color: #2d2d44;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        margin-top: 1rem;
+      }
+
+      nav a {
+        margin: 0.5rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <button class="dark-toggle" onclick="toggleDarkMode()">☾ Dark</button>
+    <h1>DIYA DINACHANDRAN</h1>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="profile">
+        <img src="images/juhi.jpg" alt="Juhi's Profile Picture" />
+    </div>
+    <p>Hi, I'm DIYA DINACHANDRAN! A passionate designer & developer who loves crafting beautiful and functional digital experiences. I specialize in front-end development and UI/UX design. Let’s build something awesome together!</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills & Expertise</h2>
+    <div class="skills">
+      <div class="card">HTML & CSS</div>
+      <div class="card">JavaScript</div>
+      <div class="card">React</div>
+      <div class="card">UI/UX Design</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <div class="card">
+            <h3>Portfolio Website</h3>
+            <p>A personal site to showcase my design, development, and creative work. Built with HTML, CSS, and love.</p>         
+        </div> 
+     </div>
+      <div class="card">
+        <h3>Project Two</h3>
+        <p>A clean and minimal to-do app built with React, styled with love.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Let's connect on <a href="https://www.linkedin.com/in/juhi123" target="_blank">LinkedIn</a> or check out my work on <a href="https://github.com/juhi-codes" target="_blank">GitHub</a>.</p>
+    <p>Email: diyadinachandran.designs@gmail.com</p>
+  </section>
+
+  <footer>
+    © 2025 DIYA DINACHANDRAN. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('nav-active');
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+
+</body>
+</html>
